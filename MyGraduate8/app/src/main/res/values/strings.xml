@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MyGraduate8</string>
+    <string name="label_slide_to_cancel">滑动取消</string>
+    <string name="hint_type_your_message">长按录音，松开保存</string>
+</resources>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:text="点此进入用户界面" />
+
+    <org.opencv.android.JavaCameraView
+        android:id="@+id/camera_view"
+        android:layout_width="305dp"
+        android:layout_height="252dp"
+        android:layout_above="@+id/input_holder"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="147dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="140dp"
+        android:layout_marginBottom="11dp"
+        android:layout_weight="1"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="134dp" />
+
+    <Button
+        android:id="@+id/switch_camera"
+        android:layout_width="41dp"
+        android:layout_height="42dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="216dp"
+        android:background="@drawable/transfer_camera"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnReg"
+        android:layout_width="92dp"
+        android:layout_height="40dp"
+        android:layout_above="@+id/input_holder"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="23dp"
+        android:layout_marginBottom="150dp"
+        android:backgroundTint="@color/label_round_blue"
+        android:text="注册"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/userID"
+        android:layout_width="123dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/input_holder"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="85dp"
+        android:background="@drawable/shape_rectangle"
+        android:ems="10"
+        android:hint="请输入用户名"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textAllUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/camera_view"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="43dp"
+        android:background="@drawable/shape_rectangle"
+        android:gravity="center"
+        android:text="无"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="112dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/camera_view"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/shape_rectangle"
+        android:gravity="center"
+        android:text="已注册用户："
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="77dp"
+        android:layout_height="47dp"
+        android:layout_above="@+id/input_holder"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="37dp"
+        android:layout_marginBottom="14dp"
+        android:background="@drawable/shape_label_blue"
+        android:gravity="center"
+        android:text="00:00:00"
+        android:textColor="@color/timeColor"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/explain"
+        android:layout_width="77dp"
+        android:layout_height="47dp"
+        android:layout_above="@+id/input_holder"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="37dp"
+        android:layout_marginBottom="14dp"
+        android:background="@drawable/shape_label_blue"
+        android:gravity="center"
+        android:text="请录音"
+        android:textColor="@color/timeColor"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.dewarder.holdinglibrary.HoldingButtonLayout
+        android:id="@+id/input_holder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        app:hbl_cancel_icon="@drawable/ic_close_black_24dp"
+        app:hbl_holding_view="@+id/start_record"
+        app:hbl_icon="@drawable/ic_mic_black_24dp"
+        app:hbl_radius="@dimen/activity_main_holding_button_radius"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="260dp"
+        >
+
+
+        <LinearLayout
+            android:id="@+id/slide_to_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|end"
+            android:layout_marginEnd="@dimen/activity_main_slide_to_cancel_margin_right"
+            android:layout_marginRight="@dimen/activity_main_slide_to_cancel_margin_right"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="@dimen/activity_main_slide_to_cancel_icon_size"
+                android:layout_height="@dimen/activity_main_slide_to_cancel_icon_size"
+                android:layout_marginEnd="@dimen/activity_main_slide_to_cancel_icon_margin_right"
+                android:layout_marginRight="@dimen/activity_main_slide_to_cancel_icon_margin_right"
+                android:scaleType="center"
+                android:src="@drawable/ic_keyboard_arrow_left_black_24dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_slide_to_cancel" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/maniLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:gravity="center"
+            android:minHeight="@dimen/activity_main_input_holder_min_height"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/input"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_main_input_margin_left"
+                android:layout_marginLeft="@dimen/activity_main_input_margin_left"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="@string/hint_type_your_message"
+                android:paddingTop="@dimen/activity_main_input_padding_vertical"
+                android:paddingBottom="@dimen/activity_main_input_padding_vertical"
+                android:textSize="@dimen/activity_main_input_text_size" />
+
+            <ImageView
+                android:id="@+id/start_record"
+                android:layout_width="@dimen/activity_main_start_record_width"
+                android:layout_height="match_parent"
+                android:scaleType="center"
+                android:src="@drawable/ic_mic_black_24dp" />
+
+        </LinearLayout>
+
+
+    </com.dewarder.holdinglibrary.HoldingButtonLayout>
+
+    <TextView
+        android:id="@+id/textViewHelp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/time"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="46dp"
+        android:layout_marginEnd="36dp"
+        android:text="使用说明" />
+
+</RelativeLayout>

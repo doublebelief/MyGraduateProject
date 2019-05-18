@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#E6E6FA</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="timeColor">#9B30FF</color>
+    <color name="label_round_blue">#E6E6FA</color>
+    <color name="border">#9B30FF</color>
+</resources>
