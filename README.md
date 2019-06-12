@@ -1,5 +1,5 @@
 # MyGraduateProject
-Face recognition and voice match.  
+Face recognition and voice match.（基于人脸识别和声纹识别的智能锁控制系统）  
 MyGraduate8 project can run in any android device, while MyGraduate8b project only runs in my own arm development board(rk3399 nanoPi M4).
 
 ## MyGraduate8使用说明  
